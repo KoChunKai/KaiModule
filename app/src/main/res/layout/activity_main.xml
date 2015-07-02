@@ -4,6 +4,19 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        layout="@layout/toplayout"
+        android:id="@+id/include" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:id="@+id/test"
+        android:layout_below="@+id/include"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/test"
+        android:scaleType="centerCrop"
+        android:background="#ffff1a6e" />
 
 
 </RelativeLayout>

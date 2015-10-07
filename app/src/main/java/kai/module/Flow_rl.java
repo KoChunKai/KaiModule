@@ -19,11 +19,8 @@ import flow.pathview.PageListener;
  */
 public class Flow_rl extends LinearLayout implements PageListener {
 
-    Context context;
-
     public Flow_rl(Context context, AttributeSet attrs) {
         super(context, attrs);
-        this.context = context;
         Path.get(context);
     }
 
@@ -41,7 +38,7 @@ public class Flow_rl extends LinearLayout implements PageListener {
         activity.findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FlowMain.self.closebottom();
+                FlowMain.bottomMeun.close();
                 System.out.println("button2");
             }
         });
@@ -49,7 +46,7 @@ public class Flow_rl extends LinearLayout implements PageListener {
         activity.findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FlowMain.self.openbottom();
+                FlowMain.bottomMeun.open();
                 System.out.println("button3");
             }
         });

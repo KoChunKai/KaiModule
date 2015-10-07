@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--//////////////////////////////////////////////////////////////////////主框架///////////////////////////////////////////////////////////////////////////////////////////////////-->
+    <!--共通TITLE-->
+    <color name="title_background">#FFe68eb6</color>
+    <color name="fragment_background">#FFFFFFFF</color>
+    <color name="title_text">#FFFFFFFF</color>
+    <color name="leftmenu_background">#FFFFFFFF</color>
+    <color name="leftmenu_textcolor">#FFFFFFFF</color>
+    <color name="leftmenu_topitem_background">#FFDD1177</color>
+
+    <!--主頁頁籤-->
+    <color name="tag_text">#FFFFFFFF</color>
+    <color name="tag_bgcolor">#FFFFAAAA</color>
+    <color name="tag_linecolor">#AA999999</color>
+    <color name="tag_numbercolor">#FFFF0000</color>
+    <!--//////////////////////////////////////////////////////////////////////主框架END///////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--副TAG  伸縮的部份-->
+    <color name="sub_menu_text_color">#FF404d57</color>
+    <!--Loading Page的部份-->
+    <color name="loading_page_bg_color">#FFEBEBEB</color>
+
+    <!--//////////////////////////////////////////////////////////////////////五大功能///////////////////////////////////////////////////////////////////////////////////////////////-->
+    <color name="bottom_menu_bg">#FFFFAAAA</color>
+    <!--/////////////////////////////////////////////////////////////////////五大功能END///////////////////////////////////////////////////////////////////////////////////////-->
+
+    <!--其他雜用-->
+    <color name="Empty">#00000000</color>
+    <color name="sex_female">#ffe68eb6</color>
+    <color name="sex_male">#ff00b3e3</color>
+
+    <!--通用-->
+    <color name="bg_ff">#FFffffff</color>
+    <color name="bg_f7">#FFf7f7f7</color>
+    <color name="bg_eb">#FFebebeb</color>
+    <color name="bg_ec">#FFececec</color>
+    <color name="bg_d9">#FFd9d9d9</color>
+    <color name="bg_gary_1">#FFfdfcf8</color>
+    <color name="bg_pink_1">#FFffe8ec</color>
+    <color name="bg_no_open">#FFffeef1</color>
+    <!--通知列表底色-->
+
+    <color name="font_white">#ffffffff</color>
+    <color name="font_white_60">#60ffffff</color>
+    <color name="font_online">#ffa1bd14</color>
+    <color name="font_username">#ff775022</color>
+    <color name="font_d9">#ffd9d9d9</color>
+    <color name="font_333">#ff333333</color>
+    <color name="font_666">#ff666666</color>
+    <color name="font_888">#ff888888</color>
+    <color name="font_gray_1">#ffb9bbc2</color>
+    <color name="font_red_1">#ffc62370</color>
+    <color name="font_red_2">#ffe88b9c</color>
+    <color name="font_red_3">#ffe68eb6</color>
+    <color name="font_orange_1">#ffff8400</color>
+    <color name="font_drakblue_1">#ff404d57</color>
+    <color name="font_blue_1">#ff009DE6</color>
+
+    <color name="alpha_ff_aa">#aaffffff</color>
+    <color name="alpha_f7_aa">#eef7f7f7</color>
+    <color name="alpha_00_cc">#aa000000</color>
+    <color name="alpha_00_70">#70000000</color>
+    <color name="alpha_00_aa">#30000000</color>
+    <color name="alpha_red_ee">#eec62370</color>
+
+    <color name="border_line_1">#ffcccccc</color>
+
+    <color name="undo_del">#ffe88b9c</color>
+    <color name="undo_back">#ffaad8de</color>
+
+    <color name="list_text_userinfo">#FF808285</color>
+    <color name="list_text_userinfo_spot">#FFF75481</color>
+
+    <!-- 消圖用-->
+    <!-- 舊版搬家部分
+
+     -->
+    <color name="chat_feelbar_back">#FFD4D5D9</color>
+    <color name="chat_feel_back">#FFF7F8FA</color>
+    <!--FB-->
+    <color name="com_facebook_picker_default_separator_color">#33464c59</color>
+    <color name="com_facebook_picker_search_bar_background">#f5f5f7</color>
+    <color name="com_facebook_picker_search_bar_text">#bcbdc2</color>
+</resources>

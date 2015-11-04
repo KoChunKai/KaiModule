@@ -1,78 +1,37 @@
 package kai.module;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
-import android.app.ActionBar;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.ProgressDialog;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.Rect;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.drawable.LayerDrawable;
-import android.graphics.drawable.ShapeDrawable;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.PagerTabStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.NotificationCompat;
-import android.util.ArrayMap;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
 import android.view.GestureDetector;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
-import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.view.animation.BounceInterpolator;
-import android.view.animation.ScaleAnimation;
-import android.webkit.ClientCertRequest;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
-import android.widget.Toast;
 
+import com.kai.library.opengallery.openGallery;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
-import org.json.JSONException;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
 import me.relex.circleindicator.CircleIndicator;
@@ -114,6 +73,7 @@ public class MainActivity extends Activity {
     int width;
     ArrayList<String> data = new ArrayList<>();
     View view;
+    ImageAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,7 +96,7 @@ public class MainActivity extends Activity {
         defaultIndicator = (CircleIndicator) findViewById(R.id.indicator_default);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT,width);
         viewPager.setLayoutParams(lp);
-        ImageAdapter adapter = new ImageAdapter();
+        adapter = new ImageAdapter();
         viewPager.setAdapter(adapter);
         defaultIndicator.setViewPager(viewPager);
 
@@ -175,10 +135,13 @@ public class MainActivity extends Activity {
         findViewById(R.id.top).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openIntent();
+                Intent i = new Intent(MainActivity.this, openGallery.class);
+                startActivityForResult(i, 200);
             }
         });
-        openIntent();
+
+        Log.d("kai","h:"+"SystemNotice".hashCode());
+        //Notification();
     }
 
     File file;
@@ -198,6 +161,19 @@ public class MainActivity extends Activity {
             if(resultCode==Activity.RESULT_OK){
                 System.out.println("Activity.RESULT_OK");
 
+            }
+        }
+        if(requestCode == 200){
+            Log.d("Main","200");
+            switch (resultCode){
+                case Activity.RESULT_OK:
+                    Log.d("Main","OK");
+                    pic[0] = "file://" + data.getExtras().getString("path");
+                    adapter.notifyDataSetChanged();
+                    break;
+                case Activity.RESULT_CANCELED:
+                    Log.d("Main","Cancel");
+                    break;
             }
         }
     }
@@ -229,11 +205,11 @@ public class MainActivity extends Activity {
                 getResources(), R.mipmap.appstart_icon);
 
         builder.setSmallIcon(R.mipmap.ic_launcher)
-                .setLargeIcon(largeIcon)
-                .setTicker("EFFECT")
+                //.setLargeIcon(largeIcon)
                 .setWhen(System.currentTimeMillis())
-                .setContentTitle("Custom effect")
-                .setContentIntent(appIntent);
+                .setContentTitle("Title")
+                .setContentText("TEXT");
+                //.setContentIntent(appIntent);
         notificationManager.notify(0, builder.build());
 
     }

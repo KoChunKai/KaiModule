@@ -68,6 +68,7 @@ public class practiveOkHttp extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appstart);
+        imageView.setVisibility(View.VISIBLE);
         //IMEI();
     }
 

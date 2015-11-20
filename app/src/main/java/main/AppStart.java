@@ -7,6 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.HashMap;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.Timer;

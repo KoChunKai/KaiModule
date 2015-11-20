@@ -8,6 +8,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -17,7 +18,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.os.Message;
+import android.support.annotation.NonNull;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.app.NotificationCompat;
 import android.telephony.TelephonyManager;
@@ -41,6 +44,8 @@ import com.squareup.okhttp.Response;
 
 import java.io.IOException;
 import java.security.MessageDigest;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
@@ -48,7 +53,7 @@ import java.util.TreeMap;
 /**
  * Created by kevin on 2015/10/8.
  */
-public class practiveOkHttp extends Activity {
+public class practiveOkHttp extends Activity implements ServiceConnection {
 
     ImageLoader imageLoader = ImageLoader.getInstance();
 
@@ -68,7 +73,6 @@ public class practiveOkHttp extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appstart);
-        imageView.setVisibility(View.VISIBLE);
         //IMEI();
     }
 
@@ -182,5 +186,15 @@ public class practiveOkHttp extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void onServiceConnected(ComponentName name, IBinder service) {
+
+    }
+
+    @Override
+    public void onServiceDisconnected(ComponentName name) {
+
     }
 }

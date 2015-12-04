@@ -27,12 +27,7 @@ public class AppStart extends Activity implements Observer{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appstart);
 
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-            }
-        }, 300);
-        preLoading();
+        //preLoading();
     }
 
     float EventX,EventY;

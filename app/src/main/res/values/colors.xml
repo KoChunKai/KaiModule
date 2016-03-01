@@ -82,4 +82,8 @@
     <color name="com_facebook_picker_default_separator_color">#33464c59</color>
     <color name="com_facebook_picker_search_bar_background">#f5f5f7</color>
     <color name="com_facebook_picker_search_bar_text">#bcbdc2</color>
+
+    <color name="activate_text_color">#FF666666</color>
+    <color name="deactivate_text_color">#FFCCCCCC</color>
+    <color name="transparent">#00000000</color>
 </resources>

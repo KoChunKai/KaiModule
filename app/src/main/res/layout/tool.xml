@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    android:background="#ff9230" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toolbar Title"
+        android:layout_gravity="center"
+        android:id="@+id/toolbar_title"
+        android:textSize="@dimen/abc_text_size_title_material_toolbar" />
+
+</android.support.v7.widget.Toolbar>

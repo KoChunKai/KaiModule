@@ -34,6 +34,9 @@
             android:name=".showphoto" />
 
         <activity
+            android:name="main.IpairActivity" />
+
+        <activity
             android:name=".profile_my_photoeditor"
             android:theme="@android:style/Theme.Translucent"/>
 

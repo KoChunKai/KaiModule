@@ -33,7 +33,8 @@ public class AppStart extends AppCompatActivity implements Observer{
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.appstart);
-        viewpageInit();
+        //viewpageInit();
+        startActivity(new Intent(this, IpairActivity.class));
     }
 
     ArrayList<String> data = new ArrayList<>();

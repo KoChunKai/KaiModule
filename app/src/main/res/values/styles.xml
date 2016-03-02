@@ -3,6 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/title_background</item>
+        <item name="colorPrimaryDark">@color/title_background</item>
+        <!--<item name="statusBarColor">#88009688</item> -->
+        <!--<item name="android:navigationBarColor">#00000000</item>-->
+        <!--<item name="android:windowTranslucentNavigation">true</item>-->
     </style>
 
     <style name="AppTheme_Translucent" parent="@style/AppTheme">

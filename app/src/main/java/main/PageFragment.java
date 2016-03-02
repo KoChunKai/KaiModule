@@ -1,18 +1,18 @@
 package main;
 
-import android.app.AlertDialog;
-import android.app.Notification;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.NotificationCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.github.clans.fab.FloatingActionButton;
 
 import kai.module.R;
 
@@ -31,6 +31,9 @@ public class PageFragment extends Fragment {
 
     String str = null;
     int i=1;
+    int prevPos = 0;
+    FloatingActionButton fac;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,7 @@ public class PageFragment extends Fragment {
     /**为Fragment加载布局时调用**/
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.d("onCreateView", str);
         View view = inflater.inflate(R.layout.screen3, null);
         TextView tv = (TextView) view.findViewById(R.id.textView2);
         tv.setText("fragment+" + str);
@@ -48,7 +52,76 @@ public class PageFragment extends Fragment {
                 showNotification();
             }
         });
+        ListView listView = (ListView) view.findViewById(R.id.listView);
+        fac = (FloatingActionButton) view.findViewById(R.id.fab);
+
+        String[] str = new String[50];
+        for(int i=0;i<str.length;i++){
+            str[i]= "Index:" + i ;
+        }
+        listView.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, str));
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                if (firstVisibleItem > prevPos) {
+                    //((IpairActivity)getActivity()).hideToolBar();
+                    fac.hide(true);
+                } else if (firstVisibleItem < prevPos) {
+                    //((IpairActivity)getActivity()).showToolBar();
+                    fac.show(true);
+                }
+                prevPos = firstVisibleItem;
+            }
+        });
+        //fac.setShowProgressBackground(true);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        Log.d("onResume", str);
+        super.onResume();
+    }
+
+    @Override
+    public void onDestroyView() {
+        Log.d("onDestroyView", str);
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d("onDestroy", str);
+        super.onDestroy();
+    }
+
+    @Override
+    public void onPause() {
+        Log.d("onPause", str);
+        super.onPause();
+    }
+
+    @Override
+    public void onStart() {
+        Log.d("onStart", str);
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        Log.d("onStop", str);
+        super.onStop();
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        Log.d("onActivityCreated", str);
+        super.onActivityCreated(savedInstanceState);
     }
 
     private void showNotification(){
@@ -70,7 +143,6 @@ public class PageFragment extends Fragment {
 //                .build();
 //        notificationManager.notify("KAI", 0, notification);
         //        bundle.putString(HttpLoader.EXECUTE_RESULT, );
-        new AlertDialog.Builder(getActivity()).setMessage("剪影全解鎖無隱藏，感興趣/留言/徵約會/心情貼/聊天等功能開放使用；交友暢所無阻\\\n\\\n追愛成效保證方案\\\n1. 追愛成效保證方案每個帳號僅能購買一次。\\\n2. 當您購買此方案後，若在6個月內沒有找到合適的物件，且每個月有達成以下幾項任務，iPair將免費送您6個月的服務：\\\n(1)檔案要維持公開\\\n(2)需上傳個人形象照\\\n(3)登入 5 天以上\\\n(4) 和 5個人留言互動\\\n(5) 對100人感興趣\\\n3. 追愛成效保證方案無法在使用途中轉送他人。\\\n4. 贈送的6個月服務無法退費或轉換現金。\\\n5.iPair保留修改追愛成效保證方案使用規則之權利。".replaceAll("\\n","\n").replaceAll("\\","")).show();
 
     }
 
